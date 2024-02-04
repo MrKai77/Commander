@@ -27,18 +27,17 @@ extension WheelPicker {
                 }
             }
 
-            ZStack {
-                diContainer.imageProvider.image(for: indexedApp.app, preferredSize: 64)
-                    .scaleEffect(imageScale)
-                    .background(
-                        Color.clear.contentShape(Circle()).frame(width: 90, height: 90)
-                    )
-                    .animation(.default, value: isHovering)
-                runningDotView
-            }.position(
-                x: dragOffset?.x ?? imageXOffset,
-                y: dragOffset?.y ?? imageYOffset
-            ).gesture(dragGesture)
+            diContainer.imageProvider.image(for: indexedApp.app, preferredSize: 50)
+                .scaleEffect(imageScale)
+                .background(
+                    Color.clear.contentShape(Circle()).frame(width: 90, height: 90)
+                )
+                .animation(.easeOut(duration: 0.1), value: isHovering)
+                .position(
+                    x: dragOffset?.x ?? imageXOffset,
+                    y: dragOffset?.y ?? imageYOffset
+                )
+                .gesture(dragGesture)
         }
 
         // MARK: Private
@@ -62,7 +61,7 @@ extension WheelPicker {
 
         private var imageScale: CGFloat {
             if isHovering {
-                return 1.1
+                return 1.05
             } else if dragState.isDragging(appVisualIndex: indexedApp.visualIndex) {
                 return 1
             } else {
@@ -148,23 +147,6 @@ extension WheelPicker {
                 VisualEffectView(material: .selection, blendingMode: .behindWindow)
                     .clipShape(sectionPath)
             }
-        }
-
-        @ViewBuilder private var runningDotView: some View {
-            if diContainer.appsManager.isLaunched(app: indexedApp.app), !isHovering {
-                Circle()
-                    .fill(Color(nsColor: NSColor.tertiaryLabelColor))
-                    .frame(width: 5, height: 5)
-                    .offset(runningDotOffset)
-            }
-        }
-
-        private var runningDotOffset: CGSize {
-            let offset: CGFloat = proxy.size.width * 0.12
-            return CGSize(
-                width: cos(sectionAngle * CGFloat(indexedApp.visualIndex)) * offset,
-                height: -sin(sectionAngle * CGFloat(indexedApp.visualIndex)) * offset
-            )
         }
     }
 }

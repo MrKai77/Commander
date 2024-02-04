@@ -48,19 +48,15 @@ struct WheelPicker: View {
 
     var body: some View {
         ZStack {
-            VisualEffectView(material: .sidebar, blendingMode: .behindWindow)
-                .clipShape(Circle())
-                .shadow(radius: 3)
+            VisualEffectView(material: .hudWindow, blendingMode: .behindWindow)
             sections
+        }
+        .mask {
+            Circle().strokeBorder(lineWidth: 65)
+        }
+        .shadow(radius: 10)
 
-            if let textInTheMiddle {
-                Text(textInTheMiddle)
-                    .foregroundColor(Color(.secondaryLabelColor))
-                    .bold().frame(width: emptySpaceRadius)
-                    .multilineTextAlignment(.center)
-                    .animation(.default, value: hoverState)
-            }
-        }.onReceive(apps) { newApps in
+        .onReceive(apps) { newApps in
             let oldApps = indexedApps.sorted(by: \.visualIndex).map(\.app)
             if oldApps != newApps {
                 withAnimation(oldApps.isEmpty ? nil : .default) {
@@ -68,7 +64,8 @@ struct WheelPicker: View {
                     sectionAngle = indexedApps.isEmpty ? 0 : 2 * .pi / CGFloat(indexedApps.count)
                 }
             }
-        }.onChange(of: dragState) { state in
+        }
+        .onChange(of: dragState) { state in
             guard state == .inactive else {
                 return
             }
@@ -111,7 +108,7 @@ struct WheelPicker: View {
     }
 
     private var size: CGFloat {
-        260 + CGFloat(indexedApps.count) * 10
+        150 + CGFloat(indexedApps.count) * 10
     }
 
     private var emptySpaceRadius: CGFloat {
