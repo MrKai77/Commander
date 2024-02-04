@@ -22,7 +22,6 @@
 		7F84C29929CB426D00316630 /* SettingsSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84C29829CB426D00316630 /* SettingsSidebarView.swift */; };
 		7F84C29D29CB614800316630 /* SettingsSearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84C29C29CB614800316630 /* SettingsSearchField.swift */; };
 		7F8B66852893F36100E2B108 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8B66772893F26900E2B108 /* ServiceManagement.framework */; };
-		7F8B66872893F40D00E2B108 /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8B66862893F40C00E2B108 /* NotificationName+Extension.swift */; };
 		7F8D9792289135CA0018AA2A /* ShortcutKeysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8D9791289135CA0018AA2A /* ShortcutKeysView.swift */; };
 		7F8D9794289165A10018AA2A /* AppStorageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8D9793289165A10018AA2A /* AppStorageKey.swift */; };
 		7F8D9796289167690018AA2A /* AppSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8D9795289167690018AA2A /* AppSearcher.swift */; };
@@ -107,7 +106,6 @@
 		7F84C29829CB426D00316630 /* SettingsSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSidebarView.swift; sourceTree = "<group>"; };
 		7F84C29C29CB614800316630 /* SettingsSearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSearchField.swift; sourceTree = "<group>"; };
 		7F8B66772893F26900E2B108 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
-		7F8B66862893F40C00E2B108 /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
 		7F8D9791289135CA0018AA2A /* ShortcutKeysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutKeysView.swift; sourceTree = "<group>"; };
 		7F8D9793289165A10018AA2A /* AppStorageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageKey.swift; sourceTree = "<group>"; };
 		7F8D9795289167690018AA2A /* AppSearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSearcher.swift; sourceTree = "<group>"; };
@@ -233,7 +231,6 @@
 				7FF08B072881E636000ED2AD /* NSWindow+Extension.swift */,
 				7FF08B1E288618BA000ED2AD /* Sequence+Extension.swift */,
 				7F8D979B2891731E0018AA2A /* CGPoint+Extension.swift */,
-				7F8B66862893F40C00E2B108 /* NotificationName+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -391,7 +388,6 @@
 				7F8481AF2880BE46002419E7 /* WheelPicker.swift in Sources */,
 				7FF08B1B2885DAE9000ED2AD /* WheelPickerHoverState.swift in Sources */,
 				7F8481AD2880A854002419E7 /* main.swift in Sources */,
-				7F8B66872893F40D00E2B108 /* NotificationName+Extension.swift in Sources */,
 				7FF08B1F288618BA000ED2AD /* Sequence+Extension.swift in Sources */,
 				7FAD55C9288956E2009A4020 /* BookmarksManager.swift in Sources */,
 				7FBDF3FF2880953C00173B7B /* ShortcutNotifier.swift in Sources */,
@@ -590,7 +586,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.va.commander;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -623,7 +619,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.va.commander;
 				PRODUCT_NAME = "$(TARGET_NAME)";
