@@ -11,9 +11,11 @@ struct CommanderView: View {
         WheelPicker(
             apps: diContainer.appsManager.apps,
             hoverState: $hoverState
-        ).onReceive(clearHoverSubject) { _ in
+        )
+        .onReceive(clearHoverSubject) { _ in
             hoverState = .enabledEmpty
-        }.onReceive(diContainer.shortcutNotifier.$shortcutTriggered) { isTriggered in
+        }
+        .onReceive(diContainer.shortcutNotifier.$shortcutTriggered) { isTriggered in
             if isTriggered {
                 shortcutTriggerDate = Date()
             } else {
@@ -30,9 +32,10 @@ struct CommanderView: View {
                     shortcutTriggerDate = nil
                 }
             }
-        }.opacity(showOnMouseMove && isHidden ? 0 : 1).overlay {
+        }
+        .opacity(showOnMouseMove && isHidden ? 0 : 1).overlay {
             if showOnMouseMove {
-                EmptyView().trackingMouse(offset: 32) {
+                EmptyView().trackingMouse(offset: 5) {
                     isHidden = false
                 }.onReceive(diContainer.shortcutNotifier.$shortcutTriggered) { _ in
                     isHidden = true
